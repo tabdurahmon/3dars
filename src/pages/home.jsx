@@ -1,17 +1,10 @@
-import { useFetch } from "../hooks/useFetch";
+import React from "react";
 
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-        tenetur fuga velit voluptatibus impedit perferendis perspiciatis
-        assumenda, hic delectus non rerum aliquam maxime ea tempora, quidem
-        labore ratione veritatis, quod quasi corporis. Omnis cupiditate natus
-        consectetur amet dolore modi eos necessitatibus molestias. Laborum
-        ducimus alias recusandae! Molestiae earum saepe totam!
-      </p>
+    <div className="w-full text-center">
+      <h2 className="mb-5 text-3xl font-semibold">Home</h2>
+      <p>click on the picture in the corner </p>
     </div>
   );
 }

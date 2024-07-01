@@ -3,25 +3,15 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="navbar bg-base-100">
-      <div className="flex-1">
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+      <div className="flex-1 text-4xl">
+        <Link to="/">DaiyUi</Link>
       </div>
-      <div className="dropdown">
-        <div tabIndex={0} role="button" className="btn m-1">
-          Click
-        </div>
-        <ul
-          tabIndex={0}
-          className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
-        >
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <a>Item 2</a>
-          </li>
-        </ul>
-      </div>
+      <Link
+        to="/login"
+        className="btn border-r-8 font-serif text-2xl font-medium "
+      >
+        LogOut
+      </Link>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -73,17 +63,17 @@ function Navbar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
+            <li className="text-2xl font-medium font-serif">
+              <Link to="https://t.me/Abdurahm_0n">My telegram</Link>
             </li>
-            <li>
-              <a>Settings</a>
+            <li className="text-2xl font-medium font-serif">
+              <Link to="/">Home</Link>
             </li>
-            <li>
-              <a>Logout</a>
+            <li className="text-xl font-medium font-serif">
+              <Link to="/about">About</Link>
+            </li>
+            <li className="text-xl font-medium font-serif">
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
