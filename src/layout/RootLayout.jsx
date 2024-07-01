@@ -1,10 +1,14 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "../components/navbar"
-
+import { NavLink, Outlet } from "react-router-dom";
 function RootLayout() {
   return (
     <>
-      <Navbar />
+      <nav>
+        <h1>My Articles</h1>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/articles">Articles</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
+      </nav>
       <main>
         <Outlet />
       </main>
