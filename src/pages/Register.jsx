@@ -15,13 +15,18 @@ export const action = async ({ request }) => {
   return { displayName, photoURL, email, password };
 };
 
+// custom hooks
+import { useRegister } from "../hooks/useRegister";
+
 function Register() {
-  const farxod = useActionData();
+  const userData = useActionData();
+  const { isPending, registerWithGoogle } = useRegister();
+
   useEffect(() => {
-    if (farxod) {
-      console.log(farxod);
+    if (userData) {
+      console.log(userData);
     }
-  }, [farxod]);
+  }, [userData]);
 
   return (
     <div className="auth-container">
@@ -31,36 +36,45 @@ function Register() {
           method="post"
           className="flex flex-col gap-3 w-[340px] shadow-2xl p-7 rounded-xl bg-[rgba(255,255,255,0.5)]"
         >
-          <h1 className="text-4xl  text-center">Register</h1>
+          <h1 className="text-4xl text-base-300   text-center">Register</h1>
 
-          <input
+          <FormInput
             label="Your Name :"
             type="text"
             name="displayName"
             placeholder="Your Name"
-            className="input input-bordered input-accent w-full max-w-xs"
           />
 
-          <input
+          <FormInput
             label="photo image URL :"
             type="url"
             name="photoURL"
             placeholder="Photo Image URL"
-            className="input input-bordered input-error w-full max-w-xs"
           />
 
-          <FormInput type="email" name="email" placeholder="Email" />
-          <FormInput type="password" name="password" placeholder="Password" />
+          <FormInput
+            label="email :"
+            type="email"
+            name="email"
+            placeholder="Email"
+          />
+          <FormInput
+            label="password :"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
           <div className="mt-6">
-            <button
-              className="btn bg-teal-800 btn-block no-animation"
-              type="button"
-            >
+            <button className="btn bg-teal-800 btn-block" type="button">
               Register
             </button>
           </div>
           <div>
-            <button className="btn btn-block no-animation" type="button">
+            <button
+              onClick={registerWithGoogle}
+              className="btn btn-block"
+              type="button"
+            >
               Google
             </button>
           </div>

@@ -15,9 +15,10 @@ export const action = async ({ request }) => {
   let password = formData.get("password");
   return { email, password };
 };
-
+import { useRegister } from "../hooks/useRegister";
 function Login() {
   const user = useActionData();
+  const { isPending, registerWithGoogle } = useRegister();
   useEffect(() => {
     if (user) {
       console.log(user);
@@ -32,7 +33,7 @@ function Login() {
           method="post"
           className="flex flex-col gap-5 w-[340px] shadow-2xl p-7 rounded-xl  bg-[rgba(255,255,255,0.5)]"
         >
-          <h1 className="text-4xl text-center">Login</h1>
+          <h1 className="text-4xl text-base-300 text-center">Login</h1>
           <FormInput
             label="Email :"
             type="email"
@@ -51,7 +52,11 @@ function Login() {
             </button>
           </div>
           <div>
-            <button className="btn btn-block no-animation" type="button">
+            <button
+              onClick={registerWithGoogle}
+              className="btn btn-block no-animation"
+              type="button"
+            >
               Google
             </button>
           </div>
