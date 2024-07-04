@@ -69,14 +69,21 @@ function Register() {
               Register
             </button>
           </div>
-          <div>
-            <button
-              onClick={registerWithGoogle}
-              className="btn btn-block"
-              type="button"
-            >
-              Google
-            </button>
+          <div className="w-full">
+            {isPending && (
+              <button type="button" className="btn btn-secondary btn-block">
+                Loading...
+              </button>
+            )}
+            {!isPending && (
+              <button
+                onClick={registerWithGoogle}
+                type="button"
+                className="btn btn-secondary btn-block"
+              >
+                Google
+              </button>
+            )}
           </div>
 
           <div className="text-center">
