@@ -8,14 +8,21 @@ import { Home, About, Contact, Login, Register, ErrorPage } from "./pages";
 //actions
 import { action as RegisterAction } from "./pages/Register";
 import { action as LoginAction } from "./pages/Login";
+import ProtectedRoutes from "./components/ProtectedRoutes";
+import { useGlobalContext } from "./hooks/useGlobalContext";
 
 function App() {
+  const { user } = useGlobalContext();
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <MainLayout />,
       errorElement: <ErrorPage />,
-      children: [
+      element: (
+        <ProtectedRoutes user={user}>
+          <MainLayout />
+        </ProtectedRoutes>
+      ),
+      childer: [
         {
           index: true,
           element: <Home />,
@@ -32,13 +39,13 @@ function App() {
     },
     {
       path: "login",
-      element: <Login />,
+      element: user ? <Navigate /> : <Login />,
       errorElement: <ErrorPage />,
       action: LoginAction,
     },
     {
       path: "register",
-      element: <Register />,
+      element: user ? <Navigate /> : <Register />,
       errorElement: <ErrorPage />,
       action: RegisterAction,
     },
