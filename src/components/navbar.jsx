@@ -8,9 +8,9 @@ function Navbar() {
       </div>
       <Link
         to="/login"
-        className="btn border-r-8 font-serif text-2xl font-medium "
+        className="btn  border-r-8 font-serif text-2xl font-medium "
       >
-        LogOut
+        Login
       </Link>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
@@ -55,7 +55,7 @@ function Navbar() {
             <div className="w-10 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg"
               />
             </div>
           </div>
