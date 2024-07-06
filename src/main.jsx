@@ -4,7 +4,7 @@ import "./index.css";
 // import GlobalContextProvider from "./context/GlobalContex.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <GlobalContextProvider>
+  <GlobalContextProvider>
     <App />
-  // </GlobalContextProvider>
+  </GlobalContextProvider>
 );
